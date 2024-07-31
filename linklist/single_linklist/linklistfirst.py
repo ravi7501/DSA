@@ -63,8 +63,39 @@ class single_linklist:
         t.next=n
         return 
             
-                
-
+    def delete_from_front(self):
+        if self.head== None:
+            return "no element to delete"
+        if self.length_link_list()==1:
+            self.head=None
+            return
+        self.head=self.head.next
+        return
+    
+    def delete_from_back(self):
+        if self.head== None:
+            return "no element to delete"
+        if self.length_link_list()==1:
+            self.head=None
+            return
+        li=self.head
+        while li.next and li.next.next:
+            li=li.next
+        li.next=None
+        return
+    
+    # def delete_from_after_pos(self,pos):
+    #     count=0
+    #     if self.head== None:
+    #         return "no element to delete"
+    #     if self.length_link_list()==1:
+    #         self.head=None
+    #         return
+    #     t=self.head
+    #     while t is not None and count<pos-1:
+    #         count+=1
+    #         t=t.next
+    #     t.next=t.next.next
 
 
 
@@ -78,6 +109,10 @@ if __name__=="__main__":
     print(li.length_link_list())
     li.after_specfic_pos(2,65)
     li.display_linklist()
+    li.delete_from_front()
+    li.display_linklist()
+    # li.delete_from_back()
+    # li.display_linklist()
 
 
 
