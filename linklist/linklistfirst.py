@@ -97,6 +97,26 @@ class single_linklist:
     #         t=t.next
     #     t.next=t.next.next
 
+    def middle_element(self):
+        n=self.length_link_list()
+        if n%2==0:
+            pos1=n//2
+            current=self.head
+            for i in range(pos1):
+                current=current.next
+            pos2=current.next
+            return (current.data,pos2.data)
+        else:
+            pos1=n//2
+            current=self.head
+            for i in range(pos1):
+                current=current.next
+          
+            return (current.data)
+
+
+
+
 
 
 if __name__=="__main__":
@@ -113,6 +133,7 @@ if __name__=="__main__":
     li.display_linklist()
     # li.delete_from_back()
     # li.display_linklist()
+    print("printing middle element of list ", li.middle_element())
 
 
 
